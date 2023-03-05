@@ -1,37 +1,36 @@
 import styled from 'styled-components';
 
-export const Content = styled.section`
-  height: 60vh;
-  margin: 0 auto;
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  gap: 5rem;
   max-width: 96rem;
-  margin-top: 15rem;
-
-  @media (max-width: 800px) {
-    max-width: 35rem;
-    margin-top: 5rem;
-  }
-
-  h2 {
-    font-size: ${({ theme }) => theme.fonts.sizes.superlarge};
-  }
-  p {
-    font-size: ${({ theme }) => theme.fonts.sizes.large};
-  }
+  margin: 2rem auto;
 `;
 
-export const Grid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+export const StockCard = styled.div`
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  span {
+    color: ${({ theme }) => theme.colors.primary};
+    font-size: ${({ theme }) => theme.fonts.sizes.small};
+    font-weight: 700;
+  }
+  img {
+    max-width: 100px;
+    border-radius: 100px;
+  }
 
-  align-items: center;
-
-  @media (max-width: 800px) {
-    display: flex;
-    flex-direction: column;
-
-    img {
-      order: -1;
-      max-width: 40rem;
-    }
+  p {
+    font-size: ${({ theme }) => theme.fonts.sizes.small};
+  }
+  cursor: pointer;
+  transition: 300ms all ease-in-out;
+  :hover {
+    transform: scale(1.1);
   }
 `;

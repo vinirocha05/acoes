@@ -1,23 +1,22 @@
-import { GetServerSideProps, GetStaticProps } from 'next';
+import { GetServerSideProps } from 'next';
 import { getAllStocks } from '../data/get-all-stocks';
 import { Stock } from '../domain/stock';
+import StockContainer from '../Components/StockContainer';
+import { Container, Nav } from './styles.ts';
 
 export type StockProps = {
   stocks: Stock[];
 };
 
 export default function Home({ stocks }: StockProps) {
-  console.log(stocks);
-
   return (
-    <section>
-      <h1>Olá mundo!</h1>
-      <div>
-        {stocks.map((e) => (
-          <p key={e.name}>{e.name}</p>
-        ))}
-      </div>
-    </section>
+    <Container>
+      <Nav>
+        <h1>seja bem-vindo(a)_</h1>
+      </Nav>
+
+      <StockContainer stocks={stocks} />
+    </Container>
   );
 }
 
