@@ -37,15 +37,7 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="pt-BR">
-        <Head>
-          <link
-            rel="preload"
-            href="Tenez-Italic.otf"
-            as="font"
-            type="font/otf"
-            crossOrigin=""
-          />
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />

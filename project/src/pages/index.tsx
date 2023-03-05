@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import { getAllStocks } from '../data/get-all-stocks';
 import { Stock } from '../domain/stock';
 import StockContainer from '../Components/StockContainer';
-import { Container, Nav } from './styles.ts';
+import { Container, Nav } from './styles';
 
 export type StockProps = {
   stocks: Stock[];
