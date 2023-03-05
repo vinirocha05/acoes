@@ -1,8 +1,8 @@
 export const theme = {
   colors: {
-    primary: '#0194be',
-    white: '#F1EDE4',
-    dark: '#071A2B',
+    primary: '#00ADB5',
+    white: '#EEEEEE',
+    dark: '#222831',
   },
   fonts: {
     sizes: {

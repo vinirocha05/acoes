@@ -1,19 +1,39 @@
-import Cardapio from '../Components/Cardapio';
-import Carrosel from '../Components/Carrosel';
-import Footer from '../Components/Footer';
-import Galeria from '../Components/Galeria';
-import Header from '../Components/Header';
-import Sobre from '../Components/Sobre';
+import { GetServerSideProps, GetStaticProps } from 'next';
+import { getAllStocks } from '../data/get-all-stocks';
+import { Stock } from '../domain/stock';
 
-export default function Home() {
+export type StockProps = {
+  stocks: Stock[];
+};
+
+export default function Home({ stocks }: StockProps) {
+  console.log(stocks);
+
   return (
-    <>
-      <Header />
-      <Carrosel />
-      <Sobre />
-      <Cardapio />
-      <Galeria />
-      <Footer />
-    </>
+    <section>
+      <h1>Olá mundo!</h1>
+      <div>
+        {stocks.map((e) => (
+          <p key={e.name}>{e.name}</p>
+        ))}
+      </div>
+    </section>
   );
 }
+
+/*
+export const getStaticProps: GetStaticProps = async () => {
+  const stocks = await getAllStocks();
+
+  return {
+    props: { stocks },
+  };
+};
+*/
+export const getServerSideProps: GetServerSideProps = async () => {
+  const stocks = await getAllStocks();
+
+  return {
+    props: { stocks },
+  };
+};

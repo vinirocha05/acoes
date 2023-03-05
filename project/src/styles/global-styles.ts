@@ -43,7 +43,7 @@ html{
 }
 
 body {
-    font-family: 'Tenez', sans-serif;
+  font-family: 'Poppins', sans-serif;
     background-color: ${({ theme }) => theme.colors.white};
   }
 
